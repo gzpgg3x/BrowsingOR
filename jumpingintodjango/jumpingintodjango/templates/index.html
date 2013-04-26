@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Questions {% endblock %}
+{% block content %}
+    <p><a href="{% url "question_create" %}">Create a question</a></p>
+
+	{% for question in questions %}
+		<a href="{% url "question_detail" question.id %}">{{question.subject}} ?</a><br/>
+	{% endfor %}
+{% endblock %}
+

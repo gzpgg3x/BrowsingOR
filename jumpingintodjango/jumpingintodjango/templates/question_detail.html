@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Question detail{% endblock %}
+{% block content %}
+	<h2>{{question.subject}}?</h2>
+	<p><a href="{% url "question_edit" question.id %}">Edit this question</a></p>
+	<p><b>Published:</b> {{question.publication_date|date:"D, Y/m/d"}}</p>
+	{% if question.description %}
+		{{question.description}}
+	{% else %}
+		No description provided
+	{% endif %}
+	</p>
+	<h3>Answers</h3>
+	<ul>
+		{% for answer in question.answer_set.all %}
+			<li>{{answer.content|safe}}</li>
+		{% empty %}
+			<li>No answers yet</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
