@@ -6,13 +6,15 @@
 	<table>
 	<tr>
 	  <th>#</th>
-	  <th>URLs</th>
+	  <th>URL_Visited</th>
+	  <th>Visit_Counts</th>
 
 	</tr>
 	{% for question in questions %}
 	<tr>
 	  <th> {{question.id}}</th>
 	  <th> {{question.subject}}</th>
+	  <th> {{question.visit}}</th>
 	</tr> 
 	{% endfor %}
 	</table>

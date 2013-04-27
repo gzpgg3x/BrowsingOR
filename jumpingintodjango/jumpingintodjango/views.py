@@ -13,8 +13,11 @@ def homepage(request):
     cur = con.cursor()
     b=1
     a=range(20)
+    d=range(20)
     for row in cur.execute("SELECT * FROM moz_places order by visit_count DESC"):   
         a[b] = row[1]
+        d[b] = row[4]
+        # d[b] = row[4]
         # html = html + "          "+ str(b) + a[b]
         b=b+1
     # print html
@@ -28,9 +31,11 @@ def homepage(request):
         for c in range(b):
             cur = con.cursor()
 
-            cur.execute("UPDATE questionsandanswers_question SET subject=? WHERE Id=?", (a[c], c))        
+            cur.execute("UPDATE questionsandanswers_question SET subject=? WHERE Id=?", (a[c], c))
+            cur.execute("UPDATE questionsandanswers_question SET visit=? WHERE Id=?", (d[c], c))      
             con.commit()
-            print a[c]
+            print a[c] #+ "    " + str(d[c])
+            print d[c]
             print c
         print "Number of rows updated: %d" % cur.rowcount    
 

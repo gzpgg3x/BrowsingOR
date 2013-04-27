@@ -6,6 +6,7 @@ class Question(models.Model):
     subject = models.CharField(max_length=200)
     description = models.TextField()
     publication_date = models.DateTimeField()
+    visit = models.IntegerField(default=0)
     def __unicode__(self):
         return self.subject
     def published_today(self):
