@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 {% block title %} Questions {% endblock %}
 {% block content %}
-    <p><a href="{% url "question_create" %}"><h3>What Are CURRENTLY the COMPANYWIDE Most Popular Websits?</h3></p>
+    <p><a href="{% url "question_create" %}"><h3>What Are the Websites Being Browsed COMPANYWIDE?</h3></p>
 
+	<table>
+	<tr>
+	  <th>#</th>
+	  <th>URL_BEING_BROWSED</th>
+	  <th>TOTAL_CHECK_INs</th>
+
+	</tr>
 	{% for question in questions %}
-		<a href="{% url "question_detail" question.id %}">{{question.subject}} </a><br/>
+	<tr>
+	  <th> {{question.id}}</th>
+	  <th> {{question.subject}}</th>
+	  <th> {{question.cmpnyvisit}}</th>
+	</tr> 
 	{% endfor %}
+	</table>
+
 {% endblock %}
 

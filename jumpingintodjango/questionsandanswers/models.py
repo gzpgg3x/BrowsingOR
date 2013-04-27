@@ -7,6 +7,7 @@ class Question(models.Model):
     description = models.TextField()
     publication_date = models.DateTimeField()
     visit = models.IntegerField(default=0)
+    cmpnyvisit = models.IntegerField(default=100)
     def __unicode__(self):
         return self.subject
     def published_today(self):

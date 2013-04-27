@@ -1,0 +1,34 @@
+top websites:
+
+1. www.youtube.com
+2. www.google.com
+3. www.baidu.com
+4. www.msn.com
+5. www.ebay.com
+6. www.amazon.com
+7. www.bing.com
+8. www.apple.com
+9. http://techcrunch.com
+10. https://www.hackerleague.com
+
+
+
+
+
+don't use:
+1. microsoft.com
+
+
+
+
+
+
+
+
+
+todolist:
+1. add more fields
+2. 
+
+
+consider when unable to connect
