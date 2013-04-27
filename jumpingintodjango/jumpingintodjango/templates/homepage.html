@@ -4,6 +4,6 @@
 	<p><h3>What Are MY Favorite Websites TODAY?</h3></p>
 
 	{% for question in questions %}
-		<a href="{% url "question_detail" question.id %}">{{question.subject}} </a><br/>
+		<a href="{% url "question_detail" question.id %}">{{question.id}}      {{question.subject}} </a><br/>
 	{% endfor %}
 {% endblock %}
