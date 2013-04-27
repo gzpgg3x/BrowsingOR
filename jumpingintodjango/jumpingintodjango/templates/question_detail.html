@@ -5,18 +5,16 @@
 	<p><a href="{% url "question_edit" question.id %}">I Want to Leave A Comment!</a></p>
 	<p><b>Last Visited:</b> {{question.publication_date|date:"D, Y/m/d"}}</p>
 	{% if question.description %}
-		<p>Ranking = {{question.id}}</p>
+		<p>Number Of Employees On This Website Now: {{question.cmpnyvisit}}</p>
 	{% else %}
 		No description provided
 	{% endif %}
 	</p>
 	<h3>Commnets</h3>
 	<ul>
-		{% for answer in question.answer_set.all %}
-			<li>{{answer.content|safe}}</li>
-		{% empty %}
-			<li>No Comments yet</li>
-		{% endfor %}
+
+			<li>{{question.description|safe}}</li>
+
 	</ul>
 {% endblock %}
 
