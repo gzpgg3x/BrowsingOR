@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Questions {% endblock %}
 {% block content %}
-    <p><a href="{% url "question_create" %}"><h3>What Are the Websites Being Browsed COMPANYWIDE?</h3></p>
+    <p><h3>What Are the Websites Being Browsed COMPANYWIDE?</h3></p>
 
 	<table>
 	<tr>
@@ -14,7 +14,7 @@
 	<tr>
 	  <th> {{question.id}}</th>
 	  <th> <a href="{% url "question_detail" question.id %}">{{question.subject}}</th>
-	  <th> {{question.cmpnyvisit}}</th>
+	  <th> {{question.cmpnyvisit}} Employee(s)</th>
 	</tr> 
 	{% endfor %}
 	</table>
