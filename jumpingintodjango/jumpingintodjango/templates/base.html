@@ -10,10 +10,10 @@
 		{% else %}
 	        <p>Welcome to BrowsingOR. Please <a href="{% url "login" %}">log in</a></p>
 	    {% endif %}
-	        <h1>BrowsingOR, An Enterprise Social Solution for Online Behavior</h1>
+	        <h1>BrowsingOR - An Enterprise Social Solution for Online Behavior</h1>
 	</div>
 	<div id ="navigation">
-	    <p><a href="{% url "homepage" %}">My Browsing</a> | <a href="{% url "questions" %}">Companywide Browsing</a></p>
+	    <p><a href="{% url "homepage" %}">My Browsing History</a> | <a href="{% url "questions" %}">Companywide Browsing History</a></p>
 	</div>
     <div id="content">
         {% block content %}{% endblock %}
