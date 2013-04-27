@@ -30,12 +30,27 @@ def index(request):
     con = lite.connect("C:/Users/fpan/AppData/Roaming/Mozilla/Firefox/Profiles/3ic6pjkn.default/places.sqlite")
     cur = con.cursor()
     b=1
-    a=range(20)
+    a=range(30)
     for row in cur.execute("SELECT * FROM moz_places order by visit_count DESC"):   
         a[b] = row[1]
         html = html + "          "+ str(b) + a[b]
         b=b+1
     print html
+
+    # cur = lite.connect("C:/Users/fpan/PY-Programs/BrowsingOR/jumpingintodjango/jumpingintodjango/db/db.sqlite")
+    # cur.execute("update questionsandanswers.question set subject = "" where id IN b", ('new', a))
+
+    con = lite.connect('C:/Users/fpan/PY-Programs/BrowsingOR/jumpingintodjango/jumpingintodjango/db/db.sqlite')
+
+    with con:
+        for c in range(b):
+            cur = con.cursor()
+
+            cur.execute("UPDATE questionsandanswers_question SET subject=? WHERE Id=?", (a[c], c))        
+            con.commit()
+            print a[c]
+            print c
+        print "Number of rows updated: %d" % cur.rowcount    
 
     questions = Question.objects.all()
     return render_to_response('index.html', {'questions': questions})
