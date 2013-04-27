@@ -3,11 +3,11 @@ from django.utils import timezone
 import datetime
 
 class Question(models.Model):
-    subject = models.CharField(max_length=200)
-    description = models.TextField()
+    subject = models.CharField(verbose_name='Website',max_length=200)
+    description = models.TextField(verbose_name='Comments')
     publication_date = models.DateTimeField()
-    visit = models.IntegerField(default=0)
-    cmpnyvisit = models.IntegerField(default=100)
+    visit = models.IntegerField(verbose_name='My Visits',default=0)
+    cmpnyvisit = models.IntegerField(verbose_name='Currently Browsed By',default=100)
     def __unicode__(self):
         return self.subject
     def published_today(self):
