@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %} Questions {% endblock %}
 {% block content %}
-    <p><h3>What Are CURRENTLY the COMPANYWIDE Most Popular Websits?</h3></p>
+    <p><a href="{% url "question_create" %}"><h3>What Are CURRENTLY the COMPANYWIDE Most Popular Websits?</h3></p>
 
 	{% for question in questions %}
-		<a href="{% url "question_detail" question.id %}">{{question.subject}} ?</a><br/>
+		<a href="{% url "question_detail" question.id %}">{{question.subject}} </a><br/>
 	{% endfor %}
 {% endblock %}
 

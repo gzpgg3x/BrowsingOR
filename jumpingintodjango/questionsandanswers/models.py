@@ -15,14 +15,9 @@ class Question(models.Model):
     published_today.short_description = 'Asked today?'
     publication_date = models.DateTimeField(auto_now_add=True)
 
- 
-
-
-
 class Answer(models.Model):
     question = models.ForeignKey(Question)
     content = models.TextField()
     best_answer = models.BooleanField("preferred answer",default=False)
     def __unicode__(self):
         return self.content
-
