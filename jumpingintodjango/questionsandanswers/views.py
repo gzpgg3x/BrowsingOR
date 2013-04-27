@@ -12,6 +12,8 @@ from django import forms
 
 from django.contrib.auth.decorators import login_required
 
+import sqlite3 as lite
+
 # def index(request):
 #     return HttpResponse("Hello world!This is my first view!")
 
@@ -23,6 +25,18 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
+    html = ""
+    con = None
+    con = lite.connect("C:/Users/fpan/AppData/Roaming/Mozilla/Firefox/Profiles/3ic6pjkn.default/places.sqlite")
+    cur = con.cursor()
+    b=1
+    a=range(20)
+    for row in cur.execute("SELECT * FROM moz_places order by visit_count DESC"):   
+        a[b] = row[1]
+        html = html + "          "+ str(b) + a[b]
+        b=b+1
+    print html
+
     questions = Question.objects.all()
     return render_to_response('index.html', {'questions': questions})
 
