@@ -131,10 +131,17 @@ def question_edit(request, question_id):
             with con:
     
                 cur = con.cursor()
-                cur.execute("INSERT INTO questionsandanswers_answer VALUES(?,?,?,?)",(b,b,a,a))
+
+                lid = cur.execute('SELECT max(id) FROM questionsandanswers_answer')
+                max_id = lid.fetchone()[0] + 1
+
+                # lid = cur.lastrowid 
+                print max_id
+                #c = int(lid) + 1
+                cur.execute("INSERT INTO questionsandanswers_answer VALUES(?,?,?,?)",(max_id,b,a,a))
                 con.commit()
-                print a
-                print b
+                # print a
+                # print b
 
             return redirect('question_detail', question_id)
     else:
