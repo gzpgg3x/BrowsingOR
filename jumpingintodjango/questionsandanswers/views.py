@@ -118,6 +118,12 @@ def question_edit(request, question_id):
         form = QuestionForm(request.POST, instance=question)
         if form.is_valid():
             form.save()
+            con = lite.connect('C:/Users/fpan/PY-Programs/BrowsingOR/jumpingintodjango/jumpingintodjango/db/db.sqlite')
+            cur = con.cursor()
+            for row in cur.execute("SELECT * FROM questionsandanswers_question WHERE Id=?", question_id):
+                a = row[0]
+                print a
+
             return redirect('question_detail', question_id)
     else:
         form = QuestionForm(instance=question)
