@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login, logout
 import sqlite3 as lite
 from questionsandanswers.models import Question
 
+def award(request):
+    return render_to_response('award.html',context_instance=RequestContext(request))
+
+
 def homepage(request):
 
     con = None

@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # url(r'^$', 'jumpingintodjango.views.homepage', name="homepage"),
     url(r'^$', 'jumpingintodjango.views.homepage', name="homepage"),
+    url(r'^award/$', 'jumpingintodjango.views.award', name="award"),
     url(r'^login/$', 'jumpingintodjango.views.login_page',name="login"),
     url(r'^logout/$', 'jumpingintodjango.views.logout_view',name="logout"),
     url(r'^questions/$', 'questionsandanswers.views.index',name="questions"),

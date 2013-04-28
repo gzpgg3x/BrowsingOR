@@ -24,11 +24,19 @@ don't use:
 
 
 
-
+Questions to ask: Can windows PC be connected to the projector?
 
 todolist:
-1. add more fields
+0. Add my award tab - static
+1. add more fields, like the last time visited?
 2. 
 
 
 consider when unable to connect
+
+
+Demo scripts:
+1. Hi everyone, thank you for having me
+2. My project is inspired by one of my clients
+3. Let me log in first
+
