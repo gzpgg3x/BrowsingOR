@@ -120,9 +120,21 @@ def question_edit(request, question_id):
             form.save()
             con = lite.connect('C:/Users/fpan/PY-Programs/BrowsingOR/jumpingintodjango/jumpingintodjango/db/db.sqlite')
             cur = con.cursor()
-            for row in cur.execute("SELECT * FROM questionsandanswers_question WHERE Id=?", question_id):
+            for row in cur.execute("SELECT * FROM questionsandanswers_question WHERE id=?", question_id):
                 a = row[0]
+                b = row[3]
+                # print a
+                # print b
+
+            con = lite.connect('C:/Users/fpan/PY-Programs/BrowsingOR/jumpingintodjango/jumpingintodjango/db/db.sqlite')
+
+            with con:
+    
+                cur = con.cursor()
+                cur.execute("INSERT INTO questionsandanswers_answer VALUES(?,?,?,?)",(b,b,a,a))
+                con.commit()
                 print a
+                print b
 
             return redirect('question_detail', question_id)
     else:
