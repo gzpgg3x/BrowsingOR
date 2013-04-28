@@ -96,7 +96,7 @@ def question_detail(request, question_id):
 class QuestionForm(forms.ModelForm):
     class Meta:
        model = Question
-       exclude = ('publication_date',)
+       exclude = ('publication_date','visit','cmpnyvisit',)
 
 
 @login_required

@@ -13,7 +13,7 @@
 	{% for question in questions %}
 	<tr>
 	  <th> {{question.id}}</th>
-	  <th> {{question.subject}}</th>
+	  <th> <a href="{% url "question_detail" question.id %}">{{question.subject}}</th>
 	  <th> {{question.visit}} Time(s)</th>
 	</tr> 
 	{% endfor %}
