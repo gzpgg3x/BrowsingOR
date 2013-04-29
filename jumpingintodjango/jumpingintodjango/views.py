@@ -16,8 +16,8 @@ def homepage(request):
     con = lite.connect("C:/Users/fpan/AppData/Roaming/Mozilla/Firefox/Profiles/3ic6pjkn.default/places.sqlite")
     cur = con.cursor()
     b=1
-    a=range(30)
-    d=range(30)
+    a=range(300)
+    d=range(300)
     for row in cur.execute("SELECT * FROM moz_places order by visit_count DESC"):   
         a[b] = row[1]
         d[b] = row[4]

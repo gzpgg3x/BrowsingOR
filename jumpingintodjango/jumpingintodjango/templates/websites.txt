@@ -36,7 +36,15 @@ consider when unable to connect
 
 
 Demo scripts:
-1. Hi everyone, thank you for having me
-2. My project is inspired by one of my clients
-3. Let me log in first
-
+1. Hi everyone, thanks having me
+2. my name, my project
+3. we spend too much time on internet these, employers complain working hours lost
+4. some companies implement tools tracking employees online behavior during working hours
+5. but fail to make them more productive with traditional tacking system as a management tool
+6. reason: employees don't have a clear picture of their online behavior, let alone colleagues
+7. it is really easy to improve with an open source solution, make it an enterprise social solution sharing your online behavior among coworkers
+8. LOGIN please!!!!
+9. access own online behavior, and coworkers collectively
+10. go to techcrunch.com one more time
+11. youtube have too many users
+12 my benefits
